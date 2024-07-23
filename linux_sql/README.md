@@ -1,2 +1,4 @@
 # Linux Cluster Monitoring Agent
-This project is under development. Since this project follows the GitFlow, the final work will be merged to the main branch after Team Code Team.
+## Introduction
+The Linux Cluster Monitoring Agent allows users to record the hardware specifications of each node and monitor node resource usage in real time. It collects data on system metrics such as CPU usage, memory consumption, disk I/O, and network activity from each node. 
+
