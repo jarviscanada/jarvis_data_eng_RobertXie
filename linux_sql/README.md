@@ -29,10 +29,10 @@ how I implement the proj
 a cluster diagram
 ## Scripts
 `psql_docker.sh`: This script 
-`host_info.sh`:
-`host_usage.sh`:
-`crontab`:
-`queries.sql`:
+`host_info.sh`: a
+`host_usage.sh`: a
+`crontab`: a
+`queries.sql`: a
 ## Database Modeling
 `host_info`:
 | id | hostname | cpu_number | cpu_architecture |             cpu_model          | cpu_mhz | l2_cache |        timestamp        | total_mem |
