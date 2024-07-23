@@ -28,4 +28,15 @@ how I implement the proj
 ## Architecture
 a cluster diagram
 ## Scripts
-`psql_docker.sh`: 
+`psql_docker.sh`: This script 
+`host_info.sh`:
+`host_usage.sh`:
+`crontab`:
+`queries.sql`:
+## Database Modeling
+`host_info`:
+| id | hostname | cpu_number | cpu_architecture |             cpu_model          | cpu_mhz | l2_cache |        timestamp        | total_mem |
+|----|----------|------------|------------------|--------------------------------|---------|----------|-------------------------|-----------|
+| 1  |   noe1   |      1     |      x86_64      | Intel(R) Xeon(R) CPU @ 2.30GHz |   2300  |    256   | 2019-05-29 17:49:53.000 |   601324  |
+
+
