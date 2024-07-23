@@ -38,10 +38,30 @@ a cluster diagram
 | id | hostname | cpu_number | cpu_architecture |             cpu_model          | cpu_mhz | l2_cache |        timestamp        | total_mem |
 |----|----------|------------|------------------|--------------------------------|---------|----------|-------------------------|-----------|
 | 1  |   noe1   |      1     |      x86_64      | Intel(R) Xeon(R) CPU @ 2.30GHz |   2300  |    256   | 2019-05-29 17:49:53.000 |   601324  |
-- `id`:
--
--
--
--
+- `id`: The table's primary key, auto increments.
+- `hostname`: The name of the machine
+- `cpu_number`: The number of the CPU on the machine
+- `cpu_architecture`: The CPU architecture
+- `cpu_model`: The CPU model
+- `cpu_mhz`: The clock speed of the CPU
+- `l2_cache`: The size of L2 cache in KB
+- `timestamp`: Current time in UTC time zone
+- `total_mem`: The size of total memory in KB
+`host_usage`:
+| timestamp | host_id | memory_free | cpu_idle |             cpu_kernel          | disk_io | disk_available |
+|-----------|----------|------------|------------------|--------------------------------|---------|----------|
+| 2019-05-29 17:49:53.000 |   1   |      300000     |      90      | 4 |   2  |    3   |
+- `timestamp `: Current time in UTC time zone
+- `host_id`: Host ID from host_info table
+- `memory_free`: The size of free memory in MB
+- `cpu_idle`: The percentage of CPU not being used by any program
+- `cpu_kernel`: The percentage of CPU being used
+- `disk_io`: Number of disk I/O
+- `disk_available`: The size of available disk of root directory in MB
+## Test
+
+## Deployment
+
+## Improvements
 
 
