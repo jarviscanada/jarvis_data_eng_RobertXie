@@ -21,9 +21,7 @@ cpu_mhz=$(echo "$lscpu_out" | egrep "BogoMIPS" | awk '{print $2}')
 l2_cache=$(echo "$lscpu_out"  | egrep "L2" | awk '{print $3}' | xargs)
 total_mem=$(grep MemTotal /proc/meminfo | awk '{print $2}' | xargs)
 
-insert_stmt="INSERT INTO host_info(hostname, cpu_number, cpu_architecture, cpu_model, cpu_mhz, \
-  l2_cache, total_mem) VALUES ('$hostname', '$cpu_number', '$cpu_architecture', '$cpu_model', \
-  '$cpu_mhz', '$l2_cache', '$total_mem')";
+insert_stmt="INSERT INTO host_info(hostname, cpu_number, cpu_architecture, cpu_model, cpu_mhz, l2_cache, total_mem) VALUES ('$hostname', '$cpu_number', '$cpu_architecture', '$cpu_model', '$cpu_mhz', '$l2_cache', '$total_mem');"
 
 export PGPASSWORD=$psql_password
 psql -h "$psql_host" -p "$psql_port" -d "$db_name" -U "$psql_user" -c "$insert_stmt"
