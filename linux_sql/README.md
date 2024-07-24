@@ -21,6 +21,8 @@ bash scripts/host_usage.sh psql_host psql_port db_name psql_user psql_password
 
 # Crontab setup
 crontab -e
+
+# Add this to crontab
 * * * * * bash [Absolute Path to host_usage.sh] host_address psql_port db_name db_username db_password > /tmp/host_usage.log
 ```
 ## Implementation
@@ -28,10 +30,32 @@ how I implement the proj
 ## Architecture
 a cluster diagram
 ## Scripts
-- `psql_docker.sh`: This script 
-- `host_info.sh`: 
-- `host_usage.sh`: 
-- `crontab`: 
+- `psql_docker.sh`: This script helps the user to manage the psql docker container.
+```
+# Create a psql docker container with the given username and password.
+./scripts/psql_docker.sh create db_username db_password
+# Start the stopped psql docker container
+./scripts/psql_docker.sh start
+# Stop the running psql docker container
+./scripts/psql_docker.sh stop
+```
+- `host_info.sh`: This script will insert the hardware specifications of the node into the database.
+```
+# Insert hardware specs data into the DB using host_info.sh
+bash scripts/host_info.sh psql_host psql_port db_name psql_user psql_password
+```
+- `host_usage.sh`: The script will insert the usage data of the machine into the database
+```
+# Insert hardware usage data into the DB using host_usage.sh
+bash scripts/host_usage.sh psql_host psql_port db_name psql_user psql_password
+```
+- `crontab`: The script will run the host_usage.sh every minute, so it collects the data continuously.
+```
+# Crontab setup
+crontab -e
+# Add this to crontab
+* * * * * bash [Absolute Path to host_usage.sh] host_address psql_port db_name db_username db_password > /tmp/host_usage.log
+```
 - `queries.sql`: 
 ## Database Modeling
 `host_info`:
