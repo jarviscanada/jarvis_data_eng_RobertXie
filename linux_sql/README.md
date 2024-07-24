@@ -1,6 +1,6 @@
 # Linux Cluster Monitoring Agent
 ## Introduction
-The Linux Cluster Monitoring Agent allows users to record the hardware specifications of each node and monitor node resource usage in real time. It collects data on system metrics such as CPU usage, memory consumption, disk I/O, and network activity from each node. 
+The Linux Cluster Monitoring Agent records the hardware specifications of each node, monitors node resource usage in real time, and updates all information in a database. The agent continuously updates host usage, providing users with the latest data. Users can write simple SQL queries to retrieve the information they need. The Linux Cluster Administration team uses this resource to generate reports for future resource planning purposes. Technologies used include Linux, Bash, Docker, Git, PostgreSQL, Regex, and crontab.
 ## Quick Start
 The following steps will get the Linux Cluster Monitoring Agent up and running with docker installed.
 ```
@@ -82,11 +82,11 @@ crontab -e
 - `cpu_idle`: The percentage of CPU not being used by any program
 - `cpu_kernel`: The percentage of CPU being used
 - `disk_io`: Number of disk I/O
-- `disk_available`: The size of available disk of root directory in MB
+- `disk_available`: The size of the available disk of the root directory in MB
 ## Test
-
+Testing was conducted by manually executing the bash scripts and DDL programs in the terminal. The program was verified by checking if the desired outcome was produced.
 ## Deployment
-
+Deployment used Git for source code management and GitHub for version control. It also utilized Docker for provisioning a PostgreSQL instance and crontab for executing the script automatically.
 ## Improvements
-
-
+- Handle hardware updates: Develop a function that can automatically detect hardware updates and update the hardware information in the database.
+- 
