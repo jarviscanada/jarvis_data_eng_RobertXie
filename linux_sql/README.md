@@ -31,7 +31,7 @@ crontab -e
 - Created `host_info.sh` and `host_usage.sh` to insert hardware and usage data into the database
 - Used `crontab` to schedule the process of collecting data by using `host_usage.sh` file
 ### Architecture
-![PSQL Docker](https://github.com/user-attachments/assets/7a080dd6-98cc-4a82-ba20-550cc1536ccf)
+![PSQL Docker](./assets/PSQL&Docker.png)
 ### Scripts
 - `psql_docker.sh`: This script helps the user to manage the psql docker container.
 ```
