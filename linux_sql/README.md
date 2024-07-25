@@ -26,10 +26,13 @@ crontab -e
 * * * * * bash [Absolute Path to host_usage.sh] host_address psql_port db_name db_username db_password > /tmp/host_usage.log
 ```
 ## Implementation
-how I implement the proj
-## Architecture
+- Developed `psql_docker.sh` to simplify the process of managing the psql docker container
+- Built `ddl.sql` file to automate the implementation of the database schema
+- Created `host_info.sh` and `host_usage.sh` to insert hardware and usage data into the database
+- Used `crontab` to schedule the process of collecting data by using `host_usage.sh` file
+### Architecture
 ![PSQL Docker](https://github.com/user-attachments/assets/7a080dd6-98cc-4a82-ba20-550cc1536ccf)
-## Scripts
+### Scripts
 - `psql_docker.sh`: This script helps the user to manage the psql docker container.
 ```
 # Create a psql docker container with the given username and password.
@@ -57,7 +60,7 @@ crontab -e
 * * * * * bash [Absolute Path to host_usage.sh] host_address psql_port db_name db_username db_password > /tmp/host_usage.log
 ```
 - `queries.sql`: 
-## Database Modeling
+### Database Modeling
 `host_info`:
 | id | hostname | cpu_number | cpu_architecture |             cpu_model          | cpu_mhz | l2_cache |        timestamp        | total_mem |
 |----|----------|------------|------------------|--------------------------------|---------|----------|-------------------------|-----------|
@@ -76,7 +79,7 @@ crontab -e
 | timestamp | host_id | memory_free | cpu_idle |             cpu_kernel          | disk_io | disk_available |
 |-----------|----------|------------|------------------|--------------------------------|---------|----------|
 | 2019-05-29 17:49:53.000 |   1   |      300000     |      90      | 4 |   2  |    3   |
-- `timestamp `: Current time in UTC time zone
+- `timestamp`: Current time in UTC time zone
 - `host_id`: Host ID from host_info table
 - `memory_free`: The size of free memory in MB
 - `cpu_idle`: The percentage of CPU not being used by any program
@@ -88,5 +91,6 @@ Testing was conducted by manually executing the bash scripts and DDL programs in
 ## Deployment
 Deployment used Git for source code management and GitHub for version control. It also utilized Docker for provisioning a PostgreSQL instance and crontab for executing the script automatically.
 ## Improvements
-- Handle hardware updates: Develop a function that can automatically detect hardware updates and update the hardware information in the database.
-- 
+- Handle hardware updates: Develop a function that can automatically detect and update the database's hardware information.
+- Generate reports: Develop a feature to help users generate useful reports for resource planning and management purposes.
+- Enhanced User Interface: Develop a web-based dashboard for visualizing real-time data, making it easier for users to monitor and analyze metrics.
