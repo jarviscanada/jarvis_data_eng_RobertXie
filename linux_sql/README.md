@@ -28,7 +28,7 @@ crontab -e
 ## Implementation
 how I implement the proj
 ## Architecture
-a cluster diagram
+/assets/PSQL&Docker.png
 ## Scripts
 - `psql_docker.sh`: This script helps the user to manage the psql docker container.
 ```
