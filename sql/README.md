@@ -117,8 +117,8 @@ select mem.firstname as memfname, mem.surname as memsname, rec.firstname as recf
 from cd.members mem
 left join cd.members rec
 on rec.memid = mem.recommendedby
-```
 order by memsname, memfname;
+```
 ###### Question 15: Produce a list of all members who have recommended another member
 ```sql
 select distinct rec.firstname, rec.surname from cd.members mem
