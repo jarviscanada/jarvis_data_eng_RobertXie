@@ -1,6 +1,6 @@
 # Introduction
 This project involves building a relational database and writing SQL queries, aimed primarily at educational purposes rather than for specific end-users. The initial setup involved configuring a PostgreSQL (PSQL) instance using Docker, ensuring an isolated and controlled environment for running applications. I developed and executed several SQL Data Definition Language (DDL) statements to create the necessary tables. Following this, I utilized the psql command-line tool to load sample data into the database. Subsequently, I crafted and executed a series of SQL queries to address various problems within the local Docker instance. The project leveraged several technologies, including Git, GitHub, Docker, and PostgreSQL.
-# SQL queries
+## SQL queries
 ###### Table Setup (DDL)
 ```
 create table cd.members
